@@ -1,11 +1,12 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from '../layouts/Layout.astro'
+import AppKitProvider from '../AppKitProvider/AppKipRrovider'
+import AdminLayout from '../components/AdminLayout'
+import DashHead from '../components/dashBoard/DashHead'
+import DashCard from '../components/dashBoard/DashCard'
+import DashTable from '../components/dashBoard/DashTable'
 ---
 
 <Layout>
-	<Welcome />
+	<AppKitProvider cookies={Astro.cookies.get('cookie')?.value ?? null} client:only="react" />
 </Layout>
