@@ -42,7 +42,7 @@ export interface postItems {
 }
 
 // 修复：返回单个对象，不是数组
-export const postResponsea = async (body:postItems): Promise<postItems> => {
+export const postResponsea = async (body:postParmas): Promise<postItems> => {
     const response =  await fetch(
         `http://jsonplaceholder.typicode.com/posts`,
         {

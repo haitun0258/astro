@@ -36,8 +36,38 @@ const createUserStore2 = create<UserStore>((set) => {
     };
 });
 
+interface resdata {
+  userId: string;
+  name: string;
+  title: string;
+  body: string;
+}
+interface UserStore3 {
+  isPending: boolean;
+  resdata: resdata;
+  setResdataZustand: (num: resdata) => void;
+  setIsPendingZustand: (num: boolean) => void;
+}
+const createUserStore3 = create<UserStore3>((set) => {
+  return {
+    isPending: false,
+    resdata: {
+      userId: '',
+      name: '',
+      title: '',
+      body: '',
+    },
+    setResdataZustand: (num: resdata) => {
+      set((state) => ({ resdata: num }))
+    },
+    setIsPendingZustand: (num: boolean) => {
+      set((state) => ({ isPending: num }))
+    },
+  };
+});
 
 
 
 
-export { createUserStore, createUserStore2 };
+
+export { createUserStore, createUserStore2, createUserStore3 };

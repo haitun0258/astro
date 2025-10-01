@@ -5,6 +5,8 @@ import { type getResponseList, type postParmas, type postItems } from '../../api
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
+import FormBtn from './FormBtn';
+import CardRight from './CardRight';
 
 export default function CardTest() {
 
@@ -35,10 +37,13 @@ export default function CardTest() {
         mutation.mutate(postData );
     };
 
-    React.useEffect(() => {
-        mutation.mutate(postData );
-    }, [postData]);
-    
+
+
+
+
+
+
+
 
     return (
         <div>
@@ -57,13 +62,16 @@ export default function CardTest() {
             </Card>
 
 
-            <Card>
+            <Card sx={{ minWidth: 275 }}>
                 <CardContent>
                     <Button onClick={handlePost}>post请求</Button>
-                    <div>
-                    <input className='border-2 border-gray-300 rounded-md p-2' type="text" value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })} />
-                    <input className='border-2 border-gray-300 rounded-md p-2' type="text" value={postData.body} onChange={(e) => setPostData({ ...postData, body: e.target.value })} />
-                    <input className='border-2 border-gray-300 rounded-md p-2' type="number" value={postData.userId} onChange={(e) => setPostData({ ...postData, userId: parseInt(e.target.value) })} />
+                    <div className='w-full flex flex-col md:flex-row '>
+                        <div className='flex-1'>
+                            <FormBtn />
+                        </div>
+                        <div className='flex-1'>
+                            <CardRight />
+                        </div>
                     </div>
                 </CardContent>
             </Card>
