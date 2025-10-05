@@ -13,4 +13,8 @@ export default defineConfig({
       experimentalDisableStreaming: true,
     }),
   ],
+  i18n: {
+    locales: ["es", "en", "zh"],
+    defaultLocale: "en",
+  }
 });

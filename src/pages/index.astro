@@ -5,8 +5,11 @@ import AdminLayout from '../components/AdminLayout'
 import DashHead from '../components/dashBoard/DashHead'
 import DashCard from '../components/dashBoard/DashCard'
 import DashTable from '../components/dashBoard/DashTable'
+import AppProviders from '../i18n/AppProviders'
 ---
 
 <Layout>
-	<AppKitProvider cookies={Astro.cookies.get('cookie')?.value ?? null} client:only="react" />
+	<AppProviders client:only="react">
+		<AppKitProvider cookies={Astro.cookies.get('cookie')?.value ?? null} client:only="react" />
+	</AppProviders>
 </Layout>

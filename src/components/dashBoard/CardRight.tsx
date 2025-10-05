@@ -17,12 +17,14 @@ interface CardRightProps {
 }
 export default function CardRight() {
     const { isPending, resdata } = createUserStore3();
-    const hasData = resdata.title || resdata.body || resdata.name || resdata.userId;
+    let hasData = resdata.title && resdata.body && resdata.name && resdata.userId;
+
+    console.log('CardRight 状态:', { isPending, resdata });
     return (
         
         <>  
         {
-            isPending || !hasData ? (
+                isPending || !hasData ? (
                 <Stack spacing={1}>
                 {/* For variant="text", adjust the height via font-size */}
                 <Skeleton variant="text" sx={{ fontSize: '1rem' }} />

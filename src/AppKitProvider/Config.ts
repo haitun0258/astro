@@ -1,17 +1,18 @@
 import { WagmiAdapter } from '@reown/appkit-adapter-wagmi'
-import { mainnet, arbitrum } from '@reown/appkit/networks'
+import { sepolia, mainnet, arbitrum} from '@reown/appkit/networks' // 添加 sepolia
 import type { AppKitNetwork } from '@reown/appkit/networks'
 
 // Get projectId from https://dashboard.reown.com
-export const projectId = "b56e18d47c72ab683b10814fe9495694" // this is a public projectId only to use on localhost
+export const projectId = "b56e18d47c72ab683b10814fe9495694"
 
 if (!projectId) {
   throw new Error('Project ID is not defined')
 }
 
-export const networks = [mainnet, arbitrum] as [AppKitNetwork, ...AppKitNetwork[]]
+// 配置测试网
+export const networks = [sepolia, mainnet, arbitrum] as [AppKitNetwork, ...AppKitNetwork[]]
 
-//Set up the Wagmi Adapter (Config)
+// Set up the Wagmi Adapter (Config)
 export const wagmiAdapter = new WagmiAdapter({
   ssr: false,
   projectId,

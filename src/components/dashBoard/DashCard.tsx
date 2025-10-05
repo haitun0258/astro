@@ -73,50 +73,55 @@ export default function DashCard() {
                     gap: 2,
                 }}
             >
-                {resDate.map((item) => (
-                    <Box key={item.id} sx={{
-                        mt: 2,
-                        p: 2, borderRadius: 2, boxShadow: 1, bgcolor: '#fff',
-                        wordBreak: 'break-word', overflowWrap: 'anywhere',
-                    }}>
-                        <Card onClick={() => {
-                            console.log('点击了')
-                        }}>
-                            <CardContent>
-                                <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 14 }}>
-                                    {item.title}
-                                </Typography>
-                                <Typography variant="h5" component="div">
-                                    {/* {item.body} */}
-                                </Typography>
-                                <Typography sx={{ color: 'text.secondary', mb: 1.5 }}>ID: {item.id}</Typography>
-                                <Typography variant="body2">
-                                    User ID: {item.userId}
-                                </Typography>
-                            </CardContent>
-                            <CardActions>
-                                <Button size="small">点击按钮  没有用</Button>
-                            </CardActions>
-                        </Card>
+                {resDate.map((item) => {
+                    if (item.userId === 1) {
+                        return (
+                            <Box key={item.id} sx={{
+                                mt: 2,
+                                p: 2, borderRadius: 2, boxShadow: 1, bgcolor: '#fff',
+                                wordBreak: 'break-word', overflowWrap: 'anywhere',
+                            }}>
+                                <Card onClick={() => {
+                                    console.log('点击了')
+                                }}>
+                                    <CardContent>
+                                        <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 14 }}>
+                                            {item.title}
+                                        </Typography>
+                                        <Typography variant="h5" component="div">
+                                            {/* {item.body} */}
+                                        </Typography>
+                                        <Typography sx={{ color: 'text.secondary', mb: 1.5 }}>ID: {item.id}</Typography>
+                                        <Typography variant="body2">
+                                            User ID: {item.userId}
+                                        </Typography>
+                                    </CardContent>
+                                    <CardActions>
+                                        <Button size="small">点击按钮  没有用</Button>
+                                    </CardActions>
+                                </Card>
 
-                        {count}
+                                {/* {count} */}
 
-                        <Button onClick={() => {
-                            inc(1)
-                        }}>点击增加</Button>
+                                {/* <Button onClick={() => {
+                                inc(1)
+                            }}>点击增加</Button>
 
-                        <Button onClick={() => {
-                            inc(10)
-                        }}>点击减少</Button>
+                            <Button onClick={() => {
+                                inc(10)
+                            }}>点击减少</Button>
 
-                        <p>{countwo.one}</p>
+                            <p>{countwo.one}</p>
 
-                        <Button onClick={() => {
-                            incwo({ one: 1, two: '2', three: true })
-                        }}>改变对象</Button>
+                            <Button onClick={() => {
+                                incwo({ one: 1, two: '2', three: true })
+                            }}>改变对象</Button> */}
 
-                    </Box>
-                ))}
+                            </Box>
+                        )
+                    }
+
+                })}
             </Box>
         )
     })

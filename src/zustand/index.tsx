@@ -50,7 +50,7 @@ interface UserStore3 {
 }
 const createUserStore3 = create<UserStore3>((set) => {
   return {
-    isPending: false,
+    isPending: true,
     resdata: {
       userId: '',
       name: '',

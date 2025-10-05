@@ -8,6 +8,7 @@ import DashHead from '../components/dashBoard/DashHead'
 import DashCard from '../components/dashBoard/DashCard'
 import DashTable from '../components/dashBoard/DashTable'
 import CardTest from '../components/dashBoard/CardTest'
+import Treaty from '../components/dashBoard/Treaty'
 
 // Set up queryClient
 const queryClient = new QueryClient()
@@ -57,11 +58,12 @@ function AppKitProvider({ cookies }: { cookies: string | null }) {
 
         <AdminLayout title="首页">
           <DashHead />
-          {/* <DashCard /> */}
 
-
+          <Treaty />
           <CardTest />
+
           <DashTable />
+          <DashCard />
         </AdminLayout>
 
       </QueryClientProvider>

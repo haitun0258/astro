@@ -153,6 +153,8 @@ export default function FormBtn() {
     };
     React.useEffect(() => {
         setIsPendingZustand(mutation.isPending);
+
+        console.log('FormBtn 状态:', mutation.isPending);
     }, [mutation.isPending, setIsPendingZustand]);
     return (
         <Box sx={{ maxWidth: 600, mx: 'auto', p: 3 }}>

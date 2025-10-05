@@ -1,4 +1,11 @@
 ---
+import * as React from 'react'
+
+import AppProviders from '../i18n/AppProviders'
+import SettingsPage from '../components/setting/SettingsPage'
+---
+
+<!-- ---
 // src/pages/settings.astro
 import Layout from '../layouts/Layout.astro';
 import AdminLayout from '../components/AdminLayout.tsx';
@@ -17,4 +24,21 @@ import AdminLayout from '../components/AdminLayout.tsx';
 			</form>
 		</div>
 	</AdminLayout>
-</Layout>
+</Layout> -->
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Settings</title>
+	</head>
+
+	<title>Settings</title>
+
+	<body>
+		<div>
+			<SettingsPage client:only="react" />
+		</div>
+	</body>
+</html>
