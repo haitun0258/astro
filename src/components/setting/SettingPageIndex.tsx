@@ -9,4 +9,4 @@ export default function SettingsPageIndex() {
             <h1>{t('table.name')}</h1>
         </div>
     )
-}
+}   
