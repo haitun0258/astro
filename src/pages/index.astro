@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/Layout.astro'
+import AppKitProvider from '../AppKitProvider/AppKipRrovider'
+import AdminLayout from '../components/AdminLayout'
+import DashHead from '../components/dashBoard/DashHead'
+import DashCard from '../components/dashBoard/DashCard'
+import DashTable from '../components/dashBoard/DashTable'
+import AppProviders from '../i18n/AppProviders'
+---
+
+<Layout>
+	<AppProviders client:only="react">
+		<AppKitProvider cookies={Astro.cookies.get('cookie')?.value ?? null} client:only="react" />
+	</AppProviders>
+</Layout>

@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AdminLayout from '../components/AdminLayout.tsx';
+import Gacha from '../components/Gacha.tsx'
+---
+
+<Layout>
+	<AdminLayout client:load title="用户管理">
+		<Gacha client:load />
+	</AdminLayout>
+</Layout>
