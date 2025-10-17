@@ -125,6 +125,8 @@ export default function PerfectGacha() {
                 <div className="absolute inset-4 rounded-full bg-gradient-to-b from-blue-100/80 to-blue-200/60 border-4 border-white/50 overflow-hidden">
                   {/* 玻璃高光 */}
                   <div className="absolute inset-0 bg-gradient-to-br from-white/60 via-transparent to-transparent" />
+                  
+                  {/* 旋转的球 - 显示所有可能的奖品 */}
                   <div className={`absolute inset-0 ${spinning ? 'animate-spin-slow' : ''}`}>
                     {balls.map((b, i) => {
                       const angle = (i / balls.length) * Math.PI * 2;
